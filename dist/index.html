@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Claudia - Application Vocale IA v3.6</title>
+  <script type="module" crossorigin src="/assets/index-neUlr1lZ.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-5Aj26RhZ.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="header">
+            <button class="back-button">-</button>
+            <span class="title">Claudia</span>
+            <button class="save-button">+</button>
+        </div>
+        <div class="datetime" id="datetime"></div>
+        <div class="waveform">
+            <div class="waveform-circle" id="listenCircle">
+                <canvas id="spectre"></canvas>
+                <div class="waveform-text" id="statusText">Appuyez ici pour commencer</div>
+            </div>
+            <div class="ai-response" id="aiResponse"></div>
+            <div class="timer" id="timer">00:00:00</div>
+        </div>
+        <div class="controls">
+            <button class="control-button" id="pauseButton">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="4" width="4" height="16" fill="currentColor"/>
+                    <rect x="14" y="4" width="4" height="16" fill="currentColor"/>
+                </svg>
+            </button>
+            <button class="control-button" id="uploadButton">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="control-button" id="activeListenButton">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 18v-6a9 9 0 0 1 18 0v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <audio id="audioPlayer" style="display:none;"></audio>
+    <input type="file" id="fileUpload" accept=".json">
+    <div id="downloadModal" class="modal">
+        <div class="modal-content">
+            <p>Voulez-vous télécharger le contexte de la conversation ?</p>
+            <div class="modal-buttons">
+                <button id="confirmDownload" class="modal-button confirm">Oui</button>
+                <button id="cancelDownload" class="modal-button cancel">Non</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
